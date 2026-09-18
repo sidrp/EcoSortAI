@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>EcoSort AI</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <main class="app">
+
+        <header class="header">
+            <div class="logo">
+                <span class="logo-icon">🌱</span>
+                <span>EcoSort</span>
+            </div>
+
+            <p class="tagline">
+                AI-powered disposal guidance
+            </p>
+        </header>
+
+
+        <!-- Main content -->
+        <section class="hero">
+
+            <h1>
+                What do I do<br>
+                with this?
+            </h1>
+
+            <p class="subtitle">
+                Upload a photo of an object and EcoSort will figure out
+                how it should be disposed of.
+            </p>
+
+
+            <!-- Upload area -->
+            <div class="upload-section">
+
+                <label for="imageInput" class="upload-box" id="uploadBox">
+
+                    <div class="upload-icon">
+                        📷
+                    </div>
+
+                    <h2>
+                        Upload an image
+                    </h2>
+
+                    <p>
+                        Click here or drag an image into this box
+                    </p>
+
+                    <span class="supported">
+                        PNG, JPG, JPEG
+                    </span>
+
+                </label>
+
+                <input
+                    type="file"
+                    id="imageInput"
+                    accept="image/png, image/jpeg, image/jpg"
+                    hidden
+                >
+
+            </div>
+
+
+            <!-- Image preview -->
+            <div class="preview-container" id="previewContainer">
+
+                <img
+                    id="imagePreview"
+                    src=""
+                    alt="Selected object"
+                >
+
+                <button
+                    class="remove-button"
+                    id="removeButton"
+                    type="button"
+                >
+                    ×
+                </button>
+
+            </div>
+
+
+            <!-- Analyze button -->
+            <button
+                class="analyze-button"
+                id="analyzeButton"
+                type="button"
+                disabled
+            >
+                Analyze Object
+            </button>
+
+
+            <!-- Loading state -->
+            <div class="loading-container" id="loadingContainer">
+
+                <div class="spinner"></div>
+
+                <p>
+                    EcoSort is analyzing your object...
+                </p>
+
+                <span>
+                    Identifying material and checking disposal rules
+                </span>
+
+            </div>
+
+
+            <!-- Error message -->
+            <div class="error-container" id="errorContainer">
+
+                <span class="error-icon">⚠️</span>
+
+                <p id="errorMessage">
+                    Something went wrong.
+                </p>
+
+            </div>
+
+
+            <!-- Result -->
+            <section class="result-card" id="resultCard">
+
+                <div class="result-header">
+
+                    <div>
+                        <span class="result-label">
+                            ECO SORT RESULT
+                        </span>
+
+                        <h2 id="objectName">
+                            Object
+                        </h2>
+                    </div>
+
+                    <div
+                        class="category-badge"
+                        id="categoryBadge"
+                    >
+                        RECYCLE
+                    </div>
+
+                </div>
+
+
+                <div class="result-divider"></div>
+
+
+                <!-- Material -->
+                <div class="result-row">
+
+                    <span class="result-key">
+                        Material
+                    </span>
+
+                    <span
+                        class="result-value"
+                        id="material"
+                    >
+                        —
+                    </span>
+
+                </div>
+
+
+                <!-- Confidence -->
+                <div class="result-row">
+
+                    <span class="result-key">
+                        Confidence
+                    </span>
+
+                    <span
+                        class="result-value"
+                        id="confidence"
+                    >
+                        —
+                    </span>
+
+                </div>
+
+
+                <!-- Why -->
+                <div class="result-section">
+
+                    <h3>
+                        Why?
+                    </h3>
+
+                    <p id="reason">
+                        —
+                    </p>
+
+                </div>
+
+
+                <!-- Instructions -->
+                <div class="result-section">
+
+                    <h3>
+                        What should I do?
+                    </h3>
+
+                    <p id="instructions">
+                        —
+                    </p>
+
+                </div>
+
+
+                <!-- Special notes -->
+                <div
+                    class="special-notes"
+                    id="specialNotes"
+                >
+
+                    <span>💡</span>
+
+                    <p id="specialNotesText">
+                        —
+                    </p>
+
+                </div>
+
+            </section>
+
+
+            <!-- Try again -->
+            <button
+                class="reset-button"
+                id="resetButton"
+                type="button"
+            >
+                Analyze Another Object
+            </button>
+
+        </section>
+
+
+        <footer class="footer">
+
+            <p>
+                EcoSort AI • Built for NextStep Hacks 2026
+            </p>
+
+        </footer>
+
+    </main>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
